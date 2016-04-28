@@ -10,6 +10,7 @@ import logging
 from ..utils.theano_utils import shared_zeros, floatX
 from ..core import Param
 from .. import activations, initializations, regularizers, constraints
+# noinspection PyUnresolvedReferences,PyPep8Naming
 from .. import float_t
 from theano.sandbox.rng_mrg import MRG_RandomStreams as RandomStreams
 from ..utils.generic_utils import standardize_io
@@ -394,7 +395,7 @@ class LSTM(Layer):
                 "gate_activation": self.gate_activation.__name__,
                 "truncate_gradient": self.truncate_gradient,
                 "shift_left": self.shift_left,
-                "param": [p.get_config for p in self.params]}
+                "param": [p.get_config() for p in self.params]}
 
 
 class LangLSTM(LSTM):
